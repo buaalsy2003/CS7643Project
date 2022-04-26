@@ -59,10 +59,9 @@ class TransformerDecoderLayer(nn.Module):
             * all_input `[batch_size x current_step x model_dim]`
 
         """
-        dec_mask = torch.gt(tgt_pad_mask.byte() +
+        dec_mask = torch.gt(tgt_pad_mask +
                             self.mask[:, :tgt_pad_mask.size(1),
                                       :tgt_pad_mask.size(1)], 0)
-
         input_norm = self.layer_norm_1(inputs)
         all_input = input_norm
         if previous_input is not None:
