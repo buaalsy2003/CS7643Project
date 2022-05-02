@@ -65,7 +65,7 @@ if __name__ == '__main__':
 
     parser.add_argument('-dataset', default='')
 
-    parser.add_argument('-n_cpus', default=2, type=int)
+    parser.add_argument('-n_cpus', default=4, type=int)
 
 
     args = parser.parse_args()
